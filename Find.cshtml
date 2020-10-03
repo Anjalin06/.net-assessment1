@@ -1,0 +1,22 @@
+﻿@model ExamWebApp.Models.EmpTables
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Find</title>
+</head>
+<body>
+    <h1>Employee Details Table</h1>
+    <div>
+        @using (Html.BeginForm())
+        {
+    <p>Enter the Employee Id: @Html.EditorFor((m) => m.EmpId)</p>
+                    <p>Enter th Employee Name: @Html.EditorFor((m) => m.EmpName)</p>
+                                    <p>Enter the Employee Address: @Html.EditorFor((m) => m.EmpAddress)</p>
+                                                    <p>Enter the Employee Salary: @Html.EditorFor((m) => m.EmpSalary)</p>
+                                                                    <button>Save Changes</button>}
+    </div>
+</body>
+</html>

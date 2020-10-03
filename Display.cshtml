@@ -1,0 +1,58 @@
+﻿@model List<ExamWebApp.Models.EmpTables>
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Display</title>
+    <style>
+        body{
+            background-color:aquamarine;
+        }
+        h1{
+            font-size:90px;
+            color:brown;
+        }
+        table{
+            padding:10px;
+            font-size:30px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Details of the Employee List</h1>
+    <hr />
+    <div>
+        <table border="1" width="100%">
+            <tr>
+                <th>Employee ID</th>
+                <th>Employee Name</th>
+                <th>Employee Address</th>
+                <th>Employee Salary</th>
+                <th>Options</th>
+            </tr>
+            @foreach (var emp in Model)
+            {
+        <tr>
+            <td>@emp.EmpId</td>
+            <td>@emp.EmpName</td>
+            <td>@emp.EmpAddress</td>
+            <td>@emp.EmpSalary</td>
+            <td>
+                @Html.ActionLink("Edit", "Find", new { id = emp.EmpId })
+                @Html.ActionLink("Delete", "DeleteEmployee", new { id = emp.EmpId })
+
+            </td>
+        </tr>            
+        }
+        </table>
+    </div>
+    <div>
+        @Html.ActionLink("New Registraion", "AddEmployee")
+    </div>
+</body>
+</html>
